@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery-3.6.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.13.4/jquery.mask.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+<h5>Calculo de M³ </h5>
+<table>
+  <tr>
+    <th>Comprimento</th>
+    <th>Altura</th>
+    <th>Largura</th>
+    <th>Total</th>
+    <th>preço dia</th>
+    <th>preço M³</th>
+    <th>Preço</th>
+    <th>Total</th>
+  </tr>
+ 
+  <tr>
+  <td><input type="text" id="the_input_id" size="10"></td>
+  <td><input type="text" id="the_input_id" size="10"></td>
+  <td><input type="text" id="the_input_id" size="10"></td>
+  <td><input type="text" id="total" size="10"></td>
+  <td><input type="text" id="n1" size="10"></td>
+  <td><input type="text" id="n1" size="10"></td>
+  <td><input type="text" id="result" size="10"></td>
+  <td><input type="text" id="totalbrl" size="10"></td>
+  </tr>
+
+
+
+  </tbody>
+</table>
+</table>
+
+<script >
+//comprimento largura e altura
+$('input[id*="the_input"]').keyup(function () {
+
+    var result = 1;
+    var x=0;
+    $('input[id*="the_input"]').each(function () {
+        if (this.value != '') {
+            result *= this.value ;
+            x++;
+        }
+    });
+    $('#total').val((x == 0) ?0:result.toFixed(4));
+   
+});  
+
+//preço
+$('input[id*="n1"]').keyup(function () {
+    var result = 1;
+    var x=0;
+    $('input[id*="n1"]').each(function () {
+        if (this.value != '') {
+            result *= this.value ;
+            x++;
+        }
+    });
+    $('#result').val((x == 0) ?0:result.toFixed(2));
+   
+});
+
+//preço final
+
+
+
+
+
+ </script>
+</body>
+</html>
